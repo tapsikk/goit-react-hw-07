@@ -1,16 +1,16 @@
-import { Provider } from 'react-redux';
-import { PersistGate } from 'redux-persist/integration/react';
-import { store, persistor } from './redux/store';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { fetchContacts } from './redux/contactsOps';
 import HomePage from './components/homePage/HomePage';
 
 function App() {
-  return (
-    <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
-        <HomePage />
-      </PersistGate>
-    </Provider>
-  );
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch]);
+
+  return <HomePage />;
 }
 
 export default App;

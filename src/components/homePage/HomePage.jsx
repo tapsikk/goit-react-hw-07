@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   addContact,
   deleteContact,
-  selectFilteredContacts,
-} from "../../redux/contactsSlice";
+} from "../../redux/contactsOps";
+import { selectFilteredContacts } from "../../redux/contactsSlice"
 import { selectFilterName, changeFilter } from "../../redux/filtersSlice";
 import ContactForm from "../contactForm/ContactForm";
 import ContactList from "../contactList/ContactList";
